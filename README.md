@@ -7,7 +7,8 @@ of the console. Therefore, I went ahead and programmed a stock checker.
 ## What does it do?
 It scrapes the website using a combination of BeautifulSoup4 and ChromeDriver.
 It's able to identify the stock availability by using HTML and CSS elements
-as guides.
+as guides. Once it find an item in stock and sold for retail price
+it will send a text message using Twiliio's API.
 
 ## Can it only do the PlayStation 5 Console ?
 No! All you need to do is alter the links at the bottom of the code
