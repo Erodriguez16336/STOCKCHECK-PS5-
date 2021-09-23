@@ -12,8 +12,8 @@ from twilio.rest import Client
 import requests
 from bs4 import BeautifulSoup
 
-account_sid = 'ACc9fd4c22cd5a9edad5deaf14ae4d6086'
-auth_token = 'c38606786825f1e01b300de0af81d4d1'
+account_sid = #
+auth_token = #
 client = Client(account_sid, auth_token)
 
 
@@ -162,8 +162,8 @@ def availability(item, store, inStock, thirdParty, url):
             message = client.messages \
                 .create(
                 body=sendSMS,
-                from_='+17144921239',
-                to='+17142664534')
+                from_='#',
+                to='#')
             return returnMSG
     if not inStock:
         return f"{Fore.WHITE}INFO{Fore.RESET} :: " \
