@@ -1,20 +1,17 @@
-import selenium
 import time
 from colorama import Fore, Back, Style
-from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from pyvirtualdisplay import Display
 from selenium import webdriver
 import random
 from twilio.rest import Client
 import requests
 from bs4 import BeautifulSoup
 
-account_sid = #
-auth_token = #
-client = Client(account_sid, auth_token)
+# account_sid = #
+# auth_token = #
+# client = Client(account_sid, auth_token)
 
 
 def newDriver():
@@ -29,7 +26,7 @@ def newDriver():
     # chrome_options.add_argument("--incognito")
     chrome_options.add_argument("--disable-plugins-discovery")
     chrome_options.add_argument("--start-maximized")
-    main = webdriver.Chrome('C:/Users/###ENTER YOUR PC NAME HERE######/Documents/chromedriver.exe', chrome_options=chrome_options)
+    main = webdriver.Chrome('C:/Users/Emmanuel/Documents/chromedriver.exe', chrome_options=chrome_options)
     main.delete_all_cookies()
     main.set_window_size(randomW, randomH)
     main.set_window_position(randomPX, randomPY)
@@ -52,7 +49,7 @@ def checkWalmart(item, store, url):
             inStock = False
         else:
             inStock = False
-        if int(price.text) > 500:
+        if int(price.text[1:]) > 500:
             thirdParty = True
         else:
             thirdParty = False
@@ -76,7 +73,6 @@ def checkbestBuyTarget(item, store, url):
             inStock = True
     except:
         inStock = False
-        print("Error")
     return availability(item, store, inStock, thirdParty, url)
 
 
@@ -84,6 +80,7 @@ def checkTarget(item, store, url):
     randomSleep()
     driver.get(url)
     thirdParty = False
+    addCart =''
     try:
         try:
             addCart = (WebDriverWait(driver, 3).until(
@@ -93,10 +90,13 @@ def checkTarget(item, store, url):
             addCart = "In stock"
         if 'Sold out' in addCart:
             inStock = False
-        else:
+        elif 'Sold out' not in addCart and '' not in addCart:
             inStock = True
+        else:
+            inStock = False
     except:
-        print("Error")
+        inStock = False
+        print("")
     return availability(item, store, inStock, thirdParty, url)
 
 
@@ -113,6 +113,7 @@ def checkGameStop(item, store, url):
         else:
             inStock = True
     except:
+        inStock = False
         print("Error")
     return availability(item, store, inStock, thirdParty, url)
 
@@ -124,7 +125,7 @@ def checkAmazon(item, store, url):
     try:
         addCart = WebDriverWait(driver, 4).until(
             EC.presence_of_element_located(
-                (By.XPATH, "//span[@class='a-size-medium a-color-price']")))
+                (By.XPATH, "//span[@class='a-size-base a-color-price']")))
         if 'unavailable' in addCart.text:
             inStock = False
         else:
