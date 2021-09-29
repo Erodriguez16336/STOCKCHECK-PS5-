@@ -1,4 +1,11 @@
 # STOCKCHECK-PS5-
+
+## Requirements:
+1. Run the pipInstall.py file to install all the required packages.
+1. Replace the chromedriver file path
+1. Run the program.
+
+
 ## Why a StockCheck?
 I created this stockchecker for PS5's because I was in need of a little extra cash flow so I had to resort to reselling. 
 Because the PlayStation 5 was in such high demand there was no way I'd be able to continuosly manually check the current stock
