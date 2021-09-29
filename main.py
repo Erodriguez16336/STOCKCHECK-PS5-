@@ -203,11 +203,7 @@ def startScript(driver):
     print(
         checkAmazon('PLAYSTATION 5 DIGITAL', 'AMAZON',
                     'https://arcus-www.amazon.com/PlayStation-5-Digital/dp/B08FC6MR62'))
-    print(
-        checkWalmart('Tracfone Wireless', 'WALMART',
-                     'https://www.walmart.com/ip/Tracfone-Wireless-LG-Classic-Flip-8GB-Black-Prepaid-Phone/679025506?wpa_bd=&wpa_pg_seller_id=F55CDC31AB754BB68FE0B39041159D63&wpa_ref_id=wpaqs:n3jB8EXWl6-46QQOqeiBRRP1wtC6518zS4r7S7L5rcKdR3a1pUd32HLHulnPGEyAgQSJ6odAn4kKNkJmVifRIBhqcBFDGNpBMks48bUQpCVUERbF6qIPi7JsVBY6kEr-bUvtk-yc-Ltvd0rG0eFEvakSLIUzzY3qLVJr0wJZupeDzHMqqhtpph_n-Gbvy_bQazQ7YJ2H_msZ5PEsKTt0sn8oVOT4_r2DIumn-vW-MVKVLVVEMhSWWTg38lLN_op8&wpa_tag=&wpa_aux_info=&wpa_pos=2&wpa_plmt=1145x1145_T-C-IG_TI_1-6_HL-INGRID-GRID-NY&wpa_aduid=6a7a8128-fbae-4006-a4ce-4b74a7a12682&wpa_pg=search&wpa_pg_id=phone&wpa_st=phone&wpa_tax=1105910_4527935_1072335_8991975&wpa_bucket=__bkt__'))
-
-
+ 
 driver = newDriver()
 while 'yes' == 'yes':
     startScript(driver)
