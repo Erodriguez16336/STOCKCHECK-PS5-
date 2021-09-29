@@ -26,7 +26,7 @@ def newDriver():
     # chrome_options.add_argument("--incognito")
     chrome_options.add_argument("--disable-plugins-discovery")
     chrome_options.add_argument("--start-maximized")
-    main = webdriver.Chrome('C:/Users/Emmanuel/Documents/chromedriver.exe', chrome_options=chrome_options)
+    main = webdriver.Chrome('####REPLACE WITH YOUR CHROMEDRIVER PATH#####', chrome_options=chrome_options)
     main.delete_all_cookies()
     main.set_window_size(randomW, randomH)
     main.set_window_position(randomPX, randomPY)
